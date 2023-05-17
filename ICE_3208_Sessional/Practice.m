@@ -1,0 +1,13 @@
+clc;close all;
+img=imread('cameraman.tif');
+[r,c]=size(img);img=im2double(img);
+subplot(231);imshow(img);title('Source image');
+noisy_img=imnoise(img,'Salt & Pepper');
+subplot(232);imshow(noisy_img);title('Salt & Pepper Noisy Image');
+mf_img=ordfilt2(noisy_img,5,ones(3,3));
+subplot(233);imshow(mf_img);title('Median Filtered Image');
+subplot(234);imshow(img);title('Source Image');
+maxf_img=ordfilt2(noisy_img,9,ones(3,3));
+subplot(235);imshow(maxf_img);title('Max Filtered Image');
+minf_img=ordfilt2(noisy_img,1,ones(3,3));
+subplot(236);imshow(minf_img);title('Min Filtered Image');

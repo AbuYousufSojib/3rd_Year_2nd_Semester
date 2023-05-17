@@ -1,0 +1,12 @@
+I=imread('E:\3-2\ICE-3207 DISP\ICE-3208 Sessional\Exm\\JWST.jpg');
+subplot(231), imshow(I), title('Source Image');
+M3=fspecial('average', 3);M9=fspecial('average', 9);
+M15=fspecial('average', 15);M25=fspecial('average', 25);
+M35=fspecial('average', 35);
+J3=imfilter(I, M3);J9=imfilter(I, M9);J15=imfilter(I, M15);
+J25=imfilter(I, M25);J35=imfilter(I, M35);
+subplot(232), imshow(J3), title('Filtered image by 3*3');
+subplot(233), imshow(J9), title('Filtered image by 9*9');
+subplot(234), imshow(J15), title('Filtered image by 15*15');
+subplot(235), imshow(J25), title('Filtered image by 25*25');
+subplot(236), imshow(J35), title('Filtered image by 35*35');
